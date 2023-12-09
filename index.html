@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function submitForm() {
+          const formulaire = document.getElementById("wrapped");
+          formulaire.submit();
+        }
+      </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="div_head">
+            <div>
+            <h1>Formulaire de formation </h1>
+        </div>
+        <div>
+            <i class="bi bi-arrow-right"></i> <p>Renseignez les informations vous concernant</p>
+        </div>
+        </div>
+    <form
+                name="submit-to-google-sheet"
+                id="wrapped"
+                method="post"
+                class="m-3"
+                action="https://script.google.com/macros/s/AKfycbzDcBNHV8P3TDxnO7veymefqGpSlbGXLA-Vc8h-jhdmEXdIKipeD6JhuJjNIBYb88KN0A/exec"
+              >
+                   
+                    <div class="mb-4 col-lg-6 col-sm-12">
+                      <label for="nom" class="form-label mb-3">Nom :</label>
+                      <input
+                        type="text"
+                        name="nom"
+                        id="nom"
+                        class="form-control required "
+                        placeholder="Entrer votre nom"
+                        onchange="getVals(this, 'nom_field');"
+                        autocomplete="family-name"
+                      />
+                    </div>
+                    <div class="mb-4 col-lg-6 col-sm-12">
+                      <label class="mb-3" for="prenom">Prenom :</label>
+                      <input
+                        type="text"
+                        name="prenom"
+                        id="prenom"
+                        class="form-control required "
+                        placeholder="Entrer votre prenom"
+                        onchange="getVals(this, 'prenom_field');"
+                      />
+                    </div>
+                    <div class="mb-4 form-group col-lg-6 col-sm-12">
+                      <label class="mb-3" for="mail">Email :</label>
+                      <input
+                        type="email"
+                        name="mail"
+                        id="mail"
+                        class="form-control required"
+                        placeholder="name@example.com"
+                        onchange="getVals(this, 'mail_field');"
+        
+                      />
+                    </div>
+                    <div class="mb-4 form-group col-lg-6 col-sm-12">
+                      <label class="mb-3" for="telephone">Mobile (whatsapp) :</label>
+                      <input
+                        type="number"
+                        name="telephone"
+                        id="telephone"
+                        class="form-control required"
+                        placeholder="Entrer votre numero (whatsapp)"
+                        onchange="getVals(this, 'telephone_field')"
+                        autocomplete="tel"
+                      />
+                    </div>
+
+                    <div class="mb-4 form-group col-lg-6 col-sm-12" id="div-reason">
+                        <label class="mb-3" for="niveauEtude"
+                          >Votre niveau d'étude :</label
+                        >
+                        <select
+                          name="niveauEtude"
+                          id="niveauEtude"
+                          class="form-control form-select form-select-md mb-3 required"
+                          onchange="getVals(this, 'niveauEtude_field');"
+                          autocomplete="off"
+                        >
+                          <option value="Selectionner une option">
+                            Sélectionner une option
+                          </option>
+                          <option value="college">
+                            Collège
+                          </option>
+                          <option value="lycee">
+                            Lycèe
+                          </option>
+                          
+                        </select>
+                      </div>
+
+                      <div class="mb-4 form-group col-lg-6 col-sm-12">
+                        <label class="mb-3" for="motivation">Motivation :</label>
+                        <textarea
+                          name="motivation"
+                          id="motivation"
+                          class="form-control"
+                          rows="3"
+                          placeholder="Écrivez vos raison de participer ici..."
+                          onchange="getVals(this, 'motivation_field');"
+                          autocomplete="off"
+                        ></textarea>
+                      </div>
+<!-- Div radio -->
+<div class="check_accep">
+<div class="div-radio">
+  <div class="form-check">
+    <label class="form-check-label mb-3 ecrit" for="donneePersonnel">En soumettant ce formulaire,j'accepte que les informations saisies soient exploitées dans le cadre de la formation et de la relation commerciale qui peut en découler.</label>
+  </div>
+  <div class="mb-3 form-check">
+    <input class="form-control form-check-input check" type="checkbox" name="donneePersonnel" id="donneePersonnel" value="Accepter" onchange="getVals(this, 'donneePersonnel_field');">
+    <label class="form-check-label ms-3" for="donneePersonnel">
+      Accepter
+    </label>
+  </div>
+</div>
+  </div>
+  <div class="mb-5 div_btn" id="bottom-wizard">
+    <button
+      type="button"
+      name="forward"
+      class="forward btn btn_submit"
+      onclick="submitForm();">
+      S'inscrire
+    </button>
+  </div>
+</div>
+
+              </form>
+           
+              <script src="script.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
