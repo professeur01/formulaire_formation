@@ -46,3 +46,19 @@ function getVals(formControl, controlType) {
       break;
   }
 }
+
+const checkActive = document.querySelector('.check');
+const btnSubmit = document.querySelector('.btn_submit');
+btnSubmit.disabled = true;
+
+console.log(checkActive);
+checkActive.addEventListener('click', () => {
+  if (checkActive.checked) {
+    console.log('checked');
+    checkActive.checked = true;
+    btnSubmit.disabled = false;
+    } else {
+      console.log('unchecked');
+      btnSubmit.disabled = true;
+      }
+})
