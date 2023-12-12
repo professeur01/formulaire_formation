@@ -13,6 +13,12 @@ function getVals(formControl, controlType) {
       $("#prenom_field").text(value);
       break;
 
+      case "age_field":
+        // Get the value for input
+        var value = $(formControl).val();
+        $("#age_field").text(value);
+        break;
+
     case "mail_field":
       // Get the value for input
       var value = $(formControl).val();
@@ -23,6 +29,12 @@ function getVals(formControl, controlType) {
       // Get the value for phone input
       var value = $(formControl).val();
       $("#telephone_field").text(value);
+      break;
+
+      case "num_parent_field":
+      // Get the value for phone input
+      var value = $(formControl).val();
+      $("#num_parent_field").text(value);
       break;
 
     case "niveauEtude_field":
@@ -51,7 +63,7 @@ const checkActive = document.querySelector('.check');
 const btnSubmit = document.querySelector('.btn_submit');
 btnSubmit.disabled = true;
 
-console.log(checkActive);
+
 checkActive.addEventListener('click', () => {
   if (checkActive.checked) {
     console.log('checked');
@@ -61,4 +73,22 @@ checkActive.addEventListener('click', () => {
       console.log('unchecked');
       btnSubmit.disabled = true;
       }
+})
+// -----------------------------Montrer la politique de Confidentialité------------------------------------
+
+const pConfid = document.querySelector('.P-confid');
+const afficherDoc = document.querySelector('.div_p_config');
+const fermer = document.querySelector('.ligne_polit_confi .span i');
+let estAfficher = false;
+pConfid.addEventListener('click', ()=>{
+  if (estAfficher) {
+    afficherDoc.classList.remove("active");
+    estAfficher = false;
+    pConfid.innerHTML="Politique de confidentialité"
+  }
+  else {
+    afficherDoc.classList.add("active");
+    estAfficher = true;
+    pConfid.innerHTML="Fermer"
+  }
 })

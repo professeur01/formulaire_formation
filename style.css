@@ -19,7 +19,26 @@ background: #ffffff;
 border-radius: 0px 0px 1rem 1rem;
 box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
+.div_p_config{
+display: none;
+transition: all 2s ease;
+}
+.div_p_config i{
+  color: #fff;
+    }
+.div_p_config.active{
+    display: block;
+    }
+.div_p_config .img_doc{
+    width: 100%;
+    border: 1px solid #fff; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+}
 
+.ligne_polit_confi .span i{
+   display: none;
+}
 .div_head p{
 color: black;
 }
@@ -31,9 +50,18 @@ color: black;
        color: #189349;
         }
 .container{
-    background-color: #f9be2d;
+    background-color: #f9bf2d;
     border-radius: 0px 0px 1rem 1rem;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.div_label{
+    display: flex;
+    align-items: center;
+}
+.ligne_polit_confi{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .btn_submit{
     width: 40% !important;
@@ -41,6 +69,12 @@ color: black;
     color: #fff !important;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
+.P-confid{
+    color: rgb(255, 47, 0);
+    cursor: pointer;
+    float: right !important;
+}
+
 .btn_submit:hover{
     background-color: #0f6f35 !important;
 }
@@ -50,7 +84,8 @@ form{
     align-items: center;
 }
 .check{
-    width: 2rem !important;
+    height: 1.2rem !important;
+    width: 1rem !important;
 }
 .check_accep{
     display: flex !important;
@@ -64,6 +99,8 @@ form{
     justify-content: center;
 }
 .form-check{
+    display: flex;
+    justify-content: space-between;
     font-size: 13px;
     width: 100% !important;
 }
@@ -84,6 +121,12 @@ width: 100% !important;
       .btn_submit{
         width: 60% !important; 
     }
+    .ligne_polit_confi span{
+    font-size: 13px;
+    }
+    .div_label label{
+        font-size: 13px;
+    }
 }
 @media screen and (max-width: 768px) {
     .check_accep{
@@ -98,6 +141,7 @@ width: 100% !important;
         width: 97% !important;
         margin-left: 18px;
     }
+  
 }
 @media screen and (max-width: 425px) {
     .check_accep{
@@ -105,6 +149,7 @@ width: 100% !important;
         width: 100% !important;
       
     }.check{
+        height: 1rem !important;
         width: 1rem !important;
     }
     .form-check{
@@ -129,6 +174,16 @@ width: 100% !important;
          .div_head h1{
             font-size: 25px;
          }
+         .ligne_polit_confi span{
+            font-size: 10px;
+            }
+            .div_label label{
+                font-size: 10px;
+            }
+            .check{
+                height: 1rem !important;
+                width: 1rem !important;
+            }
 }
 @media screen and (max-width: 280px) {
     .div_head p{
