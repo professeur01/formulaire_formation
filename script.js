@@ -49,6 +49,12 @@ function getVals(formControl, controlType) {
       $("#motivation_field").text(value);
       break;
 
+      case "etablissement_field":
+        // Get the value for textarea when "Autre" is selected
+        var value = $(formControl).val();
+        $("#etablissement_field").text(value);
+        break;
+
     case "donneePersonnel_field":
       // Get the value of the first radio button
       if ($(formControl).is(":checked")) {
@@ -92,3 +98,5 @@ pConfid.addEventListener('click', ()=>{
     pConfid.innerHTML="Fermer"
   }
 })
+
+//_______________________ Saisir un nombre negatif____________________
